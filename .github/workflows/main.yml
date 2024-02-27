@@ -8,9 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print a greeting
-        run: echo 'Hello World'
+        run: echo ${{ secrets.DOCKER_TT }}
       - name: Checkout code
         uses: actions/checkout@v4
       - name: build docker
         uses: docker/setup-buildx-action@v3
-      
+      - name: Login to Docker Hub
+        run: echo ${{ secrets.DOCKERHUB_ACCESS_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
