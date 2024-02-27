@@ -23,4 +23,4 @@ ENV NAME myapp-fast-api-docker
 LABEL maintainer="jiffingeorge <jiffingeorge@gmail.com>"
 
 # Run main.py when the container launches
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]DockerfileCopy code
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]DockerfileCopy code
